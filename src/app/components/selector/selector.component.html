@@ -1,0 +1,8 @@
+<p>
+  <i (click)="changeMonth(-1)">⬅</i>
+  <ng-container *ngIf="currentDate$ | async as currentDate">
+    <span>{{ currentDate | moment }}</span>
+  </ng-container>
+
+  <i (click)="changeMonth(1)">➡</i>
+</p>

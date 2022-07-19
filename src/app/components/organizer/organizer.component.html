@@ -1,0 +1,42 @@
+<section>
+  <header *ngIf="selectedDate$ | async as selectedDate">
+    Organizer:
+    <strong>{{ selectedDate | moment: "DD.MM.YYYY" }}</strong>
+  </header>
+
+  <main>
+    <ul *ngIf="tasks?.length; else notasks">
+      <li class="task" *ngFor="let task of tasks; index as i">
+        <span>
+          <strong>{{ i + 1 }}.</strong>
+          {{ task.title }}
+        </span>
+        <button (click)="removeTask(task)" class="btn btn-primary">
+          Remove
+        </button>
+      </li>
+    </ul>
+  </main>
+  <footer>
+    <form
+      *ngIf="organizerForm"
+      (ngSubmit)="addTask()"
+      [formGroup]="organizerForm"
+    >
+      <input type="text" placeholder="Add a task" formControlName="title" />
+      <button
+        type="submit"
+        class="btn btn-primary btn-block"
+        [disabled]="organizerForm.invalid"
+      >
+        Add
+      </button>
+    </form>
+  </footer>
+</section>
+
+<ng-template #notasks>
+  <div class="no-tasks text-center">
+    <span>No tasks yet...</span>
+  </div>
+</ng-template>
