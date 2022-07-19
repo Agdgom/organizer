@@ -48,7 +48,10 @@ table th {
   background: $light-color;
 }
 .btn {
-  display: inline-block;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.4rem;
   background: $light-color;
   color: #333;
   padding: 0.4rem 1.3rem;

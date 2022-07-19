@@ -12,7 +12,8 @@
           {{ task.title }}
         </span>
         <button (click)="removeTask(task)" class="btn btn-primary">
-          Remove
+          <fa-icon [icon]="trashIcon"></fa-icon>
+          <span>Delete</span>
         </button>
       </li>
     </ul>

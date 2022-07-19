@@ -1,8 +1,8 @@
 <p>
-  <i (click)="changeMonth(-1)">⬅</i>
+  <fa-icon (click)="changeMonth(-1)" [icon]="arrowLeftIcon" size="lg"></fa-icon>
   <ng-container *ngIf="currentDate$ | async as currentDate">
     <span>{{ currentDate | moment }}</span>
   </ng-container>
 
-  <i (click)="changeMonth(1)">➡</i>
+  <fa-icon (click)="changeMonth(1)" [icon]="arrowRightIcon" size="lg"></fa-icon>
 </p>

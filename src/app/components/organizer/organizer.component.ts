@@ -4,13 +4,14 @@ import { BehaviorSubject, switchMap } from 'rxjs';
 import { Task } from 'src/app/models/app.model';
 import { DateService } from 'src/app/services/date.service';
 import { TasksService } from 'src/app/services/tasks.service';
-
+import { faTrash } from '@fortawesome/free-solid-svg-icons';
 @Component({
   selector: 'app-organizer',
   templateUrl: './organizer.component.html',
   styleUrls: ['./organizer.component.scss'],
 })
 export class OrganizerComponent implements OnInit {
+  trashIcon = faTrash;
   selectedDate$: BehaviorSubject<moment.Moment> | undefined;
   tasks: Task[] | undefined;
   organizerForm: FormGroup | undefined;
